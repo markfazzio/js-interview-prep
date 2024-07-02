@@ -1,0 +1,74 @@
+[
+  {
+    "term": "Babel",
+    "definition": "JavaScript/TypeScript transpiler to convert ES2015+ code into backwards compatible versions"
+  },
+  {
+    "term": "Closure",
+    "definition": "Functions that retain access to variables from their containing scope even after parent execution"
+  },
+  {
+    "term": "Cookie",
+    "definition": "Small strings of data stored directly on the client"
+  },
+  {
+    "term": "DOM (Document)",
+    "definition": "Owner of all other objects on web page, child of window"
+  },
+  {
+    "term": "ES6/ES2015",
+    "definition": "Adds arrow functions, rest/spread, promises, classes, modules, etc to JavaScript"
+  },
+  {
+    "term": "Hoisting",
+    "definition": "Variables, functions, classes, and imports are moved to the top of their scope before execution"
+  },
+  {
+    "term": "JAM Stack",
+    "definition": "Javascript API's and Markup defines the modern approach using static site generation for full-stack frontend development"
+  },
+  {
+    "term": "JSON",
+    "definition": "JavaScript Object Notation used for data interchanging"
+  },
+  {
+    "term": "Local Storage",
+    "definition": "Stores data for current origin with no expiration date"
+  },
+  {
+    "term": "MEAN/MERN Stack",
+    "definition": "Full-stack development using MongoDB, Express, Angular/React, and NodeJS"
+  },
+  {
+    "term": "Module",
+    "definition": "Small units of independent, reusable code typically exporting an object, function, or constructor"
+  },
+  {
+    "term": "NodeJS",
+    "definition": "An asynchronous event-driven JavaScript runtime"
+  },
+  {
+    "term": "RxJS",
+    "definition": "Reactive Extensions for JavaScript is a library for implementing observables for callback-based code"
+  },
+  {
+    "term": "Scope",
+    "definition": "The current context of your code in regards to access of functions and variables"
+  },
+  {
+    "term": "Server-sent Events",
+    "definition": "Browser receives automatic updates from a server via HTTP connection without resorting to polling"
+  },
+  {
+    "term": "Session Storage",
+    "definition": "Stores data until browser tab is closed"
+  },
+  {
+    "term": "TypeScript",
+    "definition": "Typed superset of JavaScript created by Microsoft that adds optional typing, classes, async/await, etc. and compiles to JavaScript"
+  },
+  {
+    "term": "Window",
+    "definition": "Represents window containing the DOM (document)"
+  }
+]
