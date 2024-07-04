@@ -1,12 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import { SECTIONS } from "@/constants";
 
-export const Navbar = () => {
+interface NavbarProps {
+  activeId?: string;
+  className?: string;
+}
+
+export const Navbar = (props: NavbarProps) => {
+  const { activeId, className } = props;
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-green-800 text-white fixed w-full top-0 left-0 px-10">
+    <nav className={`fixed w-full top-0 left-0 px-10 ${className}`}>
       <div className="max-w-screen-xl">
         <div className="md:hidden flex items-center">
           <div>
@@ -65,79 +73,19 @@ export const Navbar = () => {
           id="navbar-default"
         >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4   md:flex-row md:mt-0 md:border-0">
-            <li>
-              <a
-                href="#objects"
-                className="block py-3 px-4 text-white hover:bg-green-700 rounded dark:text-white"
-                aria-current="page"
-              >
-                Objects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#functions"
-                className="block py-3 px-4 text-white hover:bg-green-700 rounded dark:text-white"
-              >
-                Functions
-              </a>
-            </li>
-            <li>
-              <a
-                href="#arrays"
-                className="block py-3 px-4 text-white hover:bg-green-700 rounded dark:text-white"
-              >
-                Arrays
-              </a>
-            </li>
-            <li>
-              <a
-                href="#values"
-                className="block py-3 px-4 text-white hover:bg-green-700 rounded dark:text-white"
-              >
-                Variables
-              </a>
-            </li>
-            <li>
-              <a
-                href="#utilities"
-                className="block py-3 px-4 text-white hover:bg-green-700 rounded dark:text-white"
-              >
-                Utilities
-              </a>
-            </li>
-            <li>
-              <a
-                href="#strings"
-                className="block py-3 px-4 text-white hover:bg-green-700 rounded dark:text-white"
-              >
-                Strings
-              </a>
-            </li>
-            <li>
-              <a
-                href="#numbers"
-                className="block py-3 px-4 text-white hover:bg-green-700 rounded dark:text-white"
-              >
-                Numbers
-              </a>
-            </li>
-            <li>
-              <a
-                href="#sets"
-                className="block py-3 px-4 text-white hover:bg-green-700 rounded dark:text-white"
-              >
-                Sets
-              </a>
-            </li>
-            <li>
-              <a
-                href="#glossary"
-                className="block py-3 px-4 text-white hover:bg-green-700 rounded dark:text-white"
-              >
-                Glossary
-              </a>
-            </li>
+            {SECTIONS.map((section: { label: string; value: string }) => (
+              <li key={`menu-item-${section.value}`}>
+                <a
+                  href={`#${section.value}`}
+                  className={`menu-item block py-3 px-4 ${
+                    section.value === activeId ? "active" : ""
+                  }`}
+                  aria-current="page"
+                >
+                  {section.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

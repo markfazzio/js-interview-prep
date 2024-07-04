@@ -1,4 +1,10 @@
-import { ReactNode } from "react";
+import { ThemeContext, ThemeContextType } from "@/context/ThemeContext";
+import { ReactNode, useContext } from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import {
+  a11yLight,
+  agate,
+} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 interface CodeBlockProps {
   children: ReactNode;
@@ -6,6 +12,16 @@ interface CodeBlockProps {
 
 export const CodeBlock = (props: CodeBlockProps) => {
   const { children } = props;
+  const { theme } = useContext(ThemeContext) as ThemeContextType;
+  const highlighterTheme = theme === "light" ? a11yLight : agate;
 
-  return <pre className="bg-black mb-3">{children}</pre>;
+  return (
+    <SyntaxHighlighter
+      language="javascript"
+      className="mb-3"
+      style={highlighterTheme}
+    >
+      {children}
+    </SyntaxHighlighter>
+  );
 };

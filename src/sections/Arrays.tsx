@@ -5,7 +5,7 @@ import { SectionMainTitle } from "@/components/SectionMainTitle";
 import { SectionSubTitle } from "@/components/SectionSubTitle";
 
 export const ArraysSection = () => (
-  <section className="bg-gray-900 p-5 mb-3" id="arrays">
+  <section className="px-5 py-10 mb-3" id="arrays">
     <SectionContainer>
       <SectionMainTitle label="Arrays" />
       <SectionSubTitle label="Common Methods" />

@@ -4,7 +4,7 @@ import { SectionMainTitle } from "@/components/SectionMainTitle";
 import { SectionSubTitle } from "@/components/SectionSubTitle";
 
 export const ObjectsSection = () => (
-  <section className="bg-gray-900 p-5 mb-3" id="objects">
+  <section className="px-5 py-10 mb-3" id="objects">
     <SectionContainer>
       <SectionMainTitle label="Objects" />
       <SectionSubTitle label="Basic Usage" />
