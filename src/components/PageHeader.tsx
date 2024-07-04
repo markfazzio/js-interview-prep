@@ -1,16 +1,25 @@
+import { BackButton } from "./BackButton";
+
 export const PageHeader = () => {
   return (
-    <div className="text-center mb-5">
-      <h1 className="text-center text-4xl mb-2">JS Interview Prep</h1>
-      <p>
-        A subset of only-important stuff from{" "}
-        <a
-          href="https://github.com/sudheerj/javascript-interview-questions?tab=readme-ov-file#what-are-the-possible-ways-to-create-objects-in-javascript"
-          target="_blank"
-        >
-          1,000 JS interview questions
-        </a>
-      </p>
+    <div className="sm:grid grid-cols-2 items-center mb-8">
+      <div className="course-meta mb-6 sm:mb-0">
+        <h1 className="text-4xl mb-2">JS Interview Prep</h1>
+        <p>
+          Quick refresher/guide to TypeScript for all experience levels. Make
+          sure to also check out{" "}
+          <a
+            className="hover:underline font-semibold"
+            href="https://ts-interview-prep.vercel.app"
+            target="_blank"
+          >
+            TS Interview Prep
+          </a>
+        </p>
+      </div>
+      <div className="course-actions text-end">
+        <BackButton />
+      </div>
     </div>
   );
 };
