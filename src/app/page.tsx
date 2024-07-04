@@ -16,6 +16,7 @@ import { UtilitiesSection } from "@/sections/Utilities";
 import { ValuesSection } from "@/sections/Values";
 import SwitchTheme from "@/components/SwitchTheme";
 import { useScrollSpy } from "@/hooks/use-scroll-spy";
+import { getSectionIdsArray } from "@/utils/section-utils";
 
 export default function Home() {
   const { theme, setTheme } = useContext(ThemeContext) as ThemeContextType;
@@ -24,17 +25,7 @@ export default function Home() {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
-  const ids = [
-    "objects",
-    "functions",
-    "arrays",
-    "values",
-    "utilities",
-    "strings",
-    "numbers",
-    "sets",
-    "glossary",
-  ];
+  const ids = getSectionIdsArray();
   const activeId = useScrollSpy(ids, 54); //
 
   return (
