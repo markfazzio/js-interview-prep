@@ -14,8 +14,9 @@ export const ArraysSection = () => (
   const brandsArray = ['Honda', 'Acura', 'BMW', 'Porsche'];
   const numbersArray = [1, 2, 5, 3, 4];
 
-  brandsArray.filter((brand) => brand === 'BMW'); // 'BMW'
+  Array.isArray(numbersArray); // true
   brandsArray.join(', '); // 'Honda, Acura, BMW, Porsche'
+  brandsArray.filter((brand) => brand === 'BMW'); // 'BMW'
   numbersArray.findIndex((element) => element > 3); // 2, returns first index matching condition
   numbersArray.find((element) => element > 3); // 5, returns first value matching condition
   numbersArray.every((element) => element < 6); // true, every element is less than 6

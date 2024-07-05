@@ -120,6 +120,17 @@ export const UtilitiesSection = () => (
   }
         `}
       </CodeBlock>
+      <SectionSubTitle label="typeof" />
+      <CodeBlock>
+        {`
+  const myValue = 'Hello';
+  typeof myValue; // 'string'
+  typeof myValue === 'string'; // true
+  typeof myValue === 'number'; // false
+  typeof myValue === 'boolean'; // false
+  typeof myValue === 'function'; // false
+        `}
+      </CodeBlock>
     </SectionContainer>
   </section>
 );
