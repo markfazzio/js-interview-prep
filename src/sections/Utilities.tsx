@@ -12,7 +12,9 @@ export const UtilitiesSection = () => (
       <CodeBlock>
         {`
   const myArr = [1, 2, 3];
+  const myObj = {name: 'Mark', car: '911 Turbo'};
   const allNumbers = [...myArr, 4, 5]; // [1, 2, 3, 4, 5]
+  const myProfile = {...myObj, theme: 'dark'} // {name: 'Mark', car: '911 Turbo', theme: 'dark'}
         `}
       </CodeBlock>
       <SectionSubTitle label="setTimeout" />
@@ -97,11 +99,18 @@ export const UtilitiesSection = () => (
       <SectionSubTitle label="URLSearchParams" />
       <CodeBlock>
         {`
-  const urlParams = new URLSearchParams(window.location.search);
-  urlParams.get('cardName'); // get param
-  urlParams.set('cardNumber', 22); // removes others with same key if they exist, sets to this
-  urlParams.append('cardNumber', 22); // append params
-  urlParams.delete('cardNumber'); // value can be passed as a second parameter if multiple same keys
+  const carSearchParams = "make=Porsche&model=911";
+  const urlParams = new URLSearchParams(carSearchParams);
+
+  urlParams.append('color', 'blue'); // "make=Porsche&model=911&color=blue"
+  urlParams.delete('make'); // "model=911&color=blue"
+  urlParams.delete('make', 'Porsche'); // "model=911&color=blue"
+  urlParams.get('make'); // 'Porsche'
+  urlParams.has('make'); // true
+  urlParams.has('make', 'Audi'); // false
+  urlParams.set('color', 'black'); // "make=Porsche&model=911&color=black"
+  urlParams.size; // 2
+  urlParams.toString(); // 'make=Porsche&model=911'
         `}
       </CodeBlock>
       <SectionSubTitle label="Date" />

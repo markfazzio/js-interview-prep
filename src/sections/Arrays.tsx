@@ -11,23 +11,33 @@ export const ArraysSection = () => (
       <SectionSubTitle label="Common Methods" />
       <CodeBlock>
         {`
-  const brandsArray = ['Honda', 'Acura', 'BMW', 'Porsche'];
-  const numbersArray = [1, 2, 5, 3, 4];
+  const brandsArray = ['Mercedes', 'Audi', 'BMW', 'Porsche'];
+  const numbersArray = [1, 2, 3, 4, 5];
+  const objectsArray = [
+    {exterior: 'Nardo Gray', interior: 'Oyster' },
+    {exterior: 'Nogaro Blue', interior: 'Black/Blue'},
+    {exterior: 'Meteor Gray', interior: 'Stone Gray'}
+  ];
 
-  Array.isArray(numbersArray); // true
-  brandsArray.join(', '); // 'Honda, Acura, BMW, Porsche'
-  brandsArray.filter((brand) => brand === 'BMW'); // 'BMW'
-  numbersArray.findIndex((element) => element > 3); // 2, returns first index matching condition
-  numbersArray.find((element) => element > 3); // 5, returns first value matching condition
+  numbersArray.at(2); // 3, gets item at index 2
+  brandsArray.concat('Toyota'); // ['Mercedes', 'Audi', 'BMW', 'Porsche', 'Toyota']
   numbersArray.every((element) => element < 6); // true, every element is less than 6
-  numbersArray.map((element) => element * 10); // [10, 20, 50, 30, 40]
+  brandsArray.filter((brand) => brand === 'BMW'); // 'BMW'
+  numbersArray.findIndex((element) => element > 3); // 3, returns first index matching condition
+  numbersArray.find((element) => element > 3); // 4, returns first value matching condition
+  numbersArray.includes(3); // true
+  brandsArray.join(', '); // 'Mercedes, Audi, BMW, Porsche'
+  numbersArray.map((element) => element * 10); // [10, 20, 30, 40, 50]
+  numbersArray.pop(); // 5, returns removed element, modifying original array to [1,2,3,4]
+  numbersArray.push(6); // 6, returns the element added, modifying the original array
   numbersArray.some((element) => element % 2 !== 0); // true (at least 1 odd element exists)
+  numbersArray.toString(); // '1,2,3,4,5'
         `}
       </CodeBlock>
-      <SectionSubTitle label="Checking" />
+      <SectionSubTitle label="Instance Methods" />
       <CodeBlock>
         {`
-  numbersArray.includes(3); // true
+  Array.from('Porsche'); // ['P', 'o', 'r', 's', 'c', 'h', 'e']
   Array.isArray(numbersArray); // true
         `}
       </CodeBlock>
@@ -39,10 +49,12 @@ export const ArraysSection = () => (
       </SectionDescription>
       <CodeBlock>
         {`
-  brandsArray.sort(); // ['Acura', 'BMW', 'Honda', 'Porsche'];
-  numbersArray.sort((a, b) => a - b); // [1,2,3,4,5]
-  numbersArray.sort((a, b) => b - a); // [5,4,3,2,1]
-  numbersArray.reverse(); // back to [1,2,3,4,5]
+  const unsortedNumbersArray = [1,3,5,2,4];
+
+  brandsArray.sort(); // ['Audi', 'BMW', 'Mercedes', 'Porsche'], strings default sort is ABC order
+  unsortedNumbersArray.sort((a, b) => a - b); // [1,2,3,4,5]
+  unsortedNumbersArray.sort((a, b) => b - a); // [5,4,3,2,1]
+  unsortedNumbersArray.reverse(); // back to [1,2,3,4,5]
         `}
       </CodeBlock>
       <SectionSubTitle label="Slice/Splice" />
@@ -54,6 +66,8 @@ export const ArraysSection = () => (
       </SectionDescription>
       <CodeBlock>
         {`
+  const numbersArray = [1, 2, 3, 4, 5];
+
   const arr1 = numbersArray.slice(0,2); // returns [1,2]
   const arr2 = numbersArray.slice(2,3); // returns [3]
   const arr3 = numbersArray.slice(4); // returns [5]
