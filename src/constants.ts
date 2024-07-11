@@ -36,3 +36,12 @@ export const SECTIONS = [
     value: "glossary",
   },
 ];
+
+export const GLOSSARY_COLUMNS = [
+  {
+    label: "Term",
+  },
+  {
+    label: "Definition",
+  },
+];

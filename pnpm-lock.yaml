@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@markfazzio/docs-ui-components':
+    specifier: ^0.0.7
+    version: 0.0.7(react-dom@18.3.1)(react@18.3.1)
   next:
     specifier: 14.2.4
     version: 14.2.4(react-dom@18.3.1)(react@18.3.1)
@@ -163,6 +166,18 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
+    dev: false
+
+  /@markfazzio/docs-ui-components@0.0.7(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-HcVewvPajx4KsvJ5qfhGGskuUICS+281JVA7n58j3rbavH9GRYD6Us/lLmrMMXZ2WoxE/bF/LyJETbdvqICd3Q==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      classnames: 2.5.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-syntax-highlighter: 15.5.0(react@18.3.1)
     dev: false
 
   /@next/env@14.2.4:
@@ -685,6 +700,10 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
+    dev: false
+
+  /classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
     dev: false
 
   /client-only@0.0.1:
