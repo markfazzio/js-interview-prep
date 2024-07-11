@@ -31,6 +31,7 @@ export default function Home() {
 
   const ids = getSectionIdsArray();
   const activeId = useScrollSpy(ids, 54); //
+  const appTitle = "JS Interview Prep";
 
   return (
     <div className={`theme-${theme}`}>
@@ -40,7 +41,30 @@ export default function Home() {
           checked={theme === "light" ? true : false}
           onChange={handleOnThemeChange}
         />
-        <PageHeader />
+        <PageHeader title={appTitle}>
+          <p>
+            Quick refresher/guide to JavaScript for all experience levels. This
+            is by no means a comprehensive guide. For that,{" "}
+            <a
+              className="hover:underline font-semibold"
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View the MDN JavaScript Guide
+            </a>
+            . Make sure to also check out:{" "}
+            <a
+              className="hover:underline font-semibold"
+              href="https://ts-interview-prep.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              TypeScript Interview Prep
+            </a>
+          </p>
+        </PageHeader>
+        {/* sections */}
         <ObjectsSection />
         <FunctionsSection />
         <ArraysSection />
